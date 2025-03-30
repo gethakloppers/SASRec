@@ -23,11 +23,11 @@ for l in parse(data_path):
 # for l in parse('All_' + dataset_name + '.jsonl.gz'):
     line += 1
     f.write(" ".join([l['user_id'], l['parent_asin'], str(l['rating']), str(l['timestamp'])]) + ' \n')
-    asin = l['parent_asin']
+    parent_asin = l['parent_asin']
     rev = l['user_id']
     timestamp = l['timestamp']
     countU[rev] += 1
-    countP[asin] += 1
+    countP[parent_asin] += 1
 f.close()
 
 print(f"Total raw users: {len(countU)}")
