@@ -20,7 +20,6 @@ data_path = '/Users/gethakloppers/Library/CloudStorage/OneDrive-StellenboschUniv
 f = open('reviews_' + dataset_name + '.txt', 'w')
 for l in parse(data_path):
     # print(l.keys())
-# for l in parse('All_' + dataset_name + '.jsonl.gz'):
     line += 1
     f.write(" ".join([l['user_id'], l['parent_asin'], str(l['rating']), str(l['timestamp'])]) + ' \n')
     parent_asin = l['parent_asin']
@@ -36,7 +35,6 @@ print(f"Total raw items: {len(countP)}")
 
 print(f"Users with ≥5 interactions: {sum(1 for v in countU.values() if v >= 5)}")
 print(f"Items with ≥5 interactions: {sum(1 for v in countP.values() if v >= 5)}")
-
 
 
 usermap = dict()
